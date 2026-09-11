@@ -333,16 +333,17 @@
   .road-box:hover .road-tags span { background: #FAFAFA; color: #050505; border-color: #FAFAFA; }
   .road-ghost { position: absolute; top: 15px; font-size: 8rem; font-weight: 900; color: #FFFFFF; opacity: 0.03; pointer-events: none; inset-inline-end: 15px; line-height: 1; font-family: 'Montserrat', sans-serif; }
 
-  /* TESTIMONIALS SECTION */
+  /* TESTIMONIALS SECTION (Fixed Marquee Loop & Styles) */
   .animated-testi-section { position: relative; z-index: 10; background: #050505; color: #FAFAFA; padding: 140px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-family: 'Montserrat', sans-serif; overflow: hidden; }
   .anim-testi-head { max-width: 1300px; margin: 0 auto 60px auto; padding: 0 clamp(20px, 4vw, 64px); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; }
   .anim-testi-title { font-size: clamp(32px, 5vw, 56px); font-weight: 800; text-transform: uppercase; color: #FAFAFA; letter-spacing: -1px; line-height: 1; }
   .anim-testi-title span { color: #FFFFFF; font-style: italic; font-weight: 300; }
   .anim-testi-desc { font-weight: 400; color: #A1A1AA; max-width: 520px; font-size: 15px; line-height: 1.6; }
+  
   .anim-testi-marquee { position: relative; width: 100%; overflow: hidden; display: flex; padding: 20px 0; }
   .anim-testi-marquee:hover .anim-testi-track { animation-play-state: paused; }
-  .anim-testi-track { display: flex; gap: 30px; width: max-content; animation: testiScroll 35s linear infinite; will-change: transform; }
-  @keyframes testiScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .anim-testi-track { display: flex; gap: 30px; width: max-content; will-change: transform; }
+  
   .anim-testi-card {
     width: 420px; background: #111111; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 36px; position: relative;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;
@@ -678,19 +679,49 @@
       <div class="anim-testi-edge l"></div>
       <div class="anim-testi-edge r"></div>
       <div class="anim-testi-track" id="animTestiTrack">
+        
         <div class="anim-testi-card">
           <div>
             <div class="anim-testi-quote">“</div>
-            <p class="anim-testi-text">Produced and edited high-quality real estate videos, contributing greatly to our marketing campaigns while managing the full workflow independently.</p>
+            <p class="anim-testi-text">Produced and edited high-quality real estate videos for Lidex Real Estate, contributing greatly to our marketing campaigns while managing the full workflow independently.</p>
           </div>
           <div class="anim-testi-client">
             <div class="anim-testi-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Client" loading="lazy" decoding="async"></div>
             <div class="anim-testi-info">
               <h4>Rashid Al-Maktoum</h4>
-              <span>Marketing Director</span>
+              <span>Marketing Director, Lidex</span>
             </div>
           </div>
         </div>
+
+        <div class="anim-testi-card">
+          <div>
+            <div class="anim-testi-quote">“</div>
+            <p class="anim-testi-text">Created incredible promotional videos and marketing content for our campaigns at AZ Pro Marketing, achieving measurable audience engagement and wonderful client feedback.</p>
+          </div>
+          <div class="anim-testi-client">
+            <div class="anim-testi-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Client" loading="lazy" decoding="async"></div>
+            <div class="anim-testi-info">
+              <h4>Michael Vance</h4>
+              <span>Creative Lead, AZ Pro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="anim-testi-card">
+          <div>
+            <div class="anim-testi-quote">“</div>
+            <p class="anim-testi-text">Captured and edited high-profile event and wedding videos at Hiza Studio while maintaining pristine quality standards and handling multiple projects seamlessly.</p>
+          </div>
+          <div class="anim-testi-client">
+            <div class="anim-testi-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Client" loading="lazy" decoding="async"></div>
+            <div class="anim-testi-info">
+              <h4>Tariq Al-Hassani</h4>
+              <span>Producer, Hiza Studio</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -727,6 +758,24 @@
               <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
               <span class="pill-text">Discuss Your Project</span>
             </a>
+          </div>
+          <div class="footer-social-links">
+              <a href="https://wa.me/971563969943" target="_blank" class="social-circle whatsapp interactive" aria-label="WhatsApp">
+                  <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+                  <span class="s-name">WhatsApp</span>
+              </a>
+              <a href="#" target="_blank" class="social-circle instagram interactive" aria-label="Instagram">
+                  <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
+                  <span class="s-name">Instagram</span>
+              </a>
+              <a href="#" target="_blank" class="social-circle linkedin interactive" aria-label="LinkedIn">
+                  <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></div>
+                  <span class="s-name">LinkedIn</span>
+              </a>
+              <a href="mailto:shotsbygoda@gmail.com" class="social-circle email interactive" aria-label="Email">
+                  <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                  <span class="s-name">Email</span>
+              </a>
           </div>
         </div>
       </div>
@@ -857,7 +906,7 @@
   let isHovered = false;
 
   if (track) {
-    track.innerHTML += track.innerHTML; // تكرار للوب السلس
+    track.innerHTML += track.innerHTML;
 
     track.addEventListener('mouseenter', () => { isHovered = true; });
     track.addEventListener('mouseleave', () => { isHovered = false; });
@@ -887,7 +936,7 @@
         if(track) track.classList.remove('filtered-mode');
         workCards.forEach(card => card.classList.remove('filtered-out'));
       } else {
-        isFiltered = true; // إيقاف الحركة تماماً عند اختيار فلتر معين
+        isFiltered = true; 
         if(track) track.classList.add('filtered-mode');
         if(track) track.style.transform = 'none';
         
@@ -902,6 +951,30 @@
       }
     });
   });
+
+  // Testimonials Smooth Infinite Marquee JS
+  const testiTrack = document.getElementById('animTestiTrack');
+  if (testiTrack) {
+    testiTrack.innerHTML += testiTrack.innerHTML;
+    let tPos = 0;
+    let tSpeed = 0.6;
+    let tHovered = false;
+
+    testiTrack.addEventListener('mouseenter', () => { tHovered = true; });
+    testiTrack.addEventListener('mouseleave', () => { tHovered = false; });
+
+    function testiStep() {
+      if (!tHovered) {
+        tPos -= tSpeed;
+        if (Math.abs(tPos) >= testiTrack.scrollWidth / 2) {
+          tPos = 0;
+        }
+        testiTrack.style.transform = `translate3d(${tPos}px, 0, 0)`;
+      }
+      requestAnimationFrame(testiStep);
+    }
+    requestAnimationFrame(testiStep);
+  }
 
   // Custom Cursor
   (function () {
