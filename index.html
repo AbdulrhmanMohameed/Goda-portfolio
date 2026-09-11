@@ -6,9 +6,13 @@
 <title>Ahmed Goda | Video Producer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Font Awesome loaded non-render-blocking (preload + swap) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
 <style>
   :root { 
@@ -19,6 +23,7 @@
     --text-muted: #A1A1AA;  
     --border: rgba(255, 255, 255, 0.08); 
     --header-fade: rgba(5, 5, 5, 0.95);
+    --f-text: #FAFAFA; --f-accent: #FFFFFF; --f-gold: #C9A227; --f-ease: cubic-bezier(.25,.46,.45,.94);
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -357,7 +362,6 @@
   @media (max-width: 768px) { .anim-testi-card { width: 320px; padding: 28px; } .anim-testi-edge { width: 50px; } }
 
   /* FOOTER */
-  :root { --f-text: #FAFAFA; --f-accent: #FFFFFF; --f-gold: #C9A227; --f-ease: cubic-bezier(.25,.46,.45,.94); }
   .footer-curtain-wrapper { position: relative; width: 100%; height: 100vh; height: 100svh; clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%); z-index: 1; }
   .cinematic-footer {
     position: fixed; bottom: 0; left: 0; width: 100%; height: 100vh; height: 100svh;
@@ -503,44 +507,44 @@
   <div class="hero-container" id="home">
     <div class="hero-bg-grid">
       <div class="col-track up">
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-track down" style="animation-duration: 28s;">
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-track up" style="animation-duration: 40s;">
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-track down" style="animation-duration: 32s;">
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-track up" style="animation-duration: 38s;">
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
-        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Work"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
+        <div class="vid-item"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=60" alt="Work" loading="lazy" decoding="async"></div>
       </div>
     </div>
 
@@ -565,7 +569,7 @@
     <div class="about-container">
       <div class="about-img-col">
         <div class="about-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80" alt="Ahmed Goda">
+          <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80" alt="Ahmed Goda" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="about-line-col" id="aboutLineContainer">
@@ -599,21 +603,21 @@
     <div class="infinite-slider-container" style="overflow: hidden; width: 100%;">
       <div class="marquee-track-work" id="workSliderTrack" style="display: flex; gap: 24px; width: max-content;">
         <div class="work-card" data-category="realestate">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Real Estate">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Real Estate" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <span class="work-card-category">Real Estate</span>
             <h3 class="work-card-title">Palm Hills Luxury Villa</h3>
           </div>
         </div>
         <div class="work-card" data-category="sports">
-          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80" alt="Sports">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80" alt="Sports" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <span class="work-card-category">Sports</span>
             <h3 class="work-card-title">Pro Training Camp Reel</h3>
           </div>
         </div>
         <div class="work-card" data-category="commercial">
-          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" alt="Commercial">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" alt="Commercial" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <span class="work-card-category">Commercial</span>
             <h3 class="work-card-title">Cinematic Brand Campaign</h3>
@@ -659,7 +663,7 @@
             <p class="anim-testi-text">Produced and edited high-quality real estate videos, contributing greatly to our marketing campaigns while managing the full workflow independently.</p>
           </div>
           <div class="anim-testi-client">
-            <div class="anim-testi-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Client"></div>
+            <div class="anim-testi-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Client" loading="lazy" decoding="async"></div>
             <div class="anim-testi-info">
               <h4>Rashid Al-Maktoum</h4>
               <span>Marketing Director</span>
@@ -708,6 +712,7 @@
 
 <div class="cursor-el" id="curRing"><div class="ring-i"><span class="lbl" id="curLbl"></span></div></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
   // Preloader & Hero animation
   gsap.set('.p-word', { yPercent: 100 });
@@ -754,7 +759,7 @@
         <div class="side"></div>
         <div class="road-card">
           <div class="road-box" data-roadbox>
-            <div class="road-thumb"><img src="${r.img}" alt="${r.year}" loading="lazy"></div>
+            <div class="road-thumb"><img src="${r.img}" alt="${r.year}" loading="lazy" decoding="async"></div>
             <span class="rid">Milestone ${r.id} — ${r.year}</span>
             <h3>${r.title}</h3>
             <p>${r.desc}</p>
