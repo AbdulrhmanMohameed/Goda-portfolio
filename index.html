@@ -6,13 +6,9 @@
 <title>Ahmed Goda | Video Producer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Font Awesome loaded non-render-blocking (preload + swap) -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
   :root { 
@@ -23,7 +19,6 @@
     --text-muted: #A1A1AA;  
     --border: rgba(255, 255, 255, 0.08); 
     --header-fade: rgba(5, 5, 5, 0.95);
-    --f-text: #FAFAFA; --f-accent: #FFFFFF; --f-gold: #C9A227; --f-ease: cubic-bezier(.25,.46,.45,.94);
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -253,7 +248,7 @@
     .line-glow { top: 0; left: 0; width: 0%; height: 4px; }
   }
 
-  /* WORK SECTION */
+  /* WORK SECTION (Smooth Infinite Slider & Filtering Pause Fix) */
   .work-section { position: relative; z-index: 10; background: #050505; padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); scroll-margin-top: 90px; }
   .work-header { max-width: 1300px; margin: 0 auto 60px auto; padding: 0 5%; display: flex; flex-direction: column; align-items: center; text-align: center; }
   .work-title { font-size: clamp(32px, 5vw, 56px); font-weight: 800; text-transform: uppercase; color: #FAFAFA; margin-bottom: 20px; line-height: 1; letter-spacing: -1px; }
@@ -265,6 +260,10 @@
     font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; text-transform: uppercase; cursor: none; transition: all 0.4s var(--ease);
   }
   .filter-btn:hover, .filter-btn.active { background: #FAFAFA; color: #050505; border-color: #FAFAFA; }
+
+  .infinite-slider-container { overflow: hidden; width: 100%; position: relative; }
+  .marquee-track-work { display: flex; gap: 24px; width: max-content; will-change: transform; }
+
   .work-card {
     width: 380px; height: 480px; border-radius: 16px; overflow: hidden; position: relative; background: #111111;
     border: 1px solid rgba(255, 255, 255, 0.08); flex-shrink: 0; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); cursor: none; transition: all 0.5s var(--ease);
@@ -278,7 +277,18 @@
   .work-card:hover .work-card-overlay { opacity: 1; }
   .work-card-category { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C9A227; margin-bottom: 8px; }
   .work-card-title { font-size: 20px; font-weight: 800; color: #FAFAFA; text-transform: uppercase; }
+  
+  /* تجميع العناصر المفلترة بشكل ديناميكي */
+  .marquee-track-work.filtered-mode {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    transform: none !important;
+    justify-content: center;
+    width: 100% !important;
+    gap: 24px;
+  }
   .work-card.filtered-out { display: none !important; }
+
   .work-cta-container { display: flex; justify-content: center; margin-top: 60px; }
   .work-section .btn-swipe {
     color: #FAFAFA; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); padding: 16px 36px; font-size: 14px;
@@ -362,6 +372,7 @@
   @media (max-width: 768px) { .anim-testi-card { width: 320px; padding: 28px; } .anim-testi-edge { width: 50px; } }
 
   /* FOOTER */
+  :root { --f-text: #FAFAFA; --f-accent: #FFFFFF; --f-gold: #C9A227; --f-ease: cubic-bezier(.25,.46,.45,.94); }
   .footer-curtain-wrapper { position: relative; width: 100%; height: 100vh; height: 100svh; clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%); z-index: 1; }
   .cinematic-footer {
     position: fixed; bottom: 0; left: 0; width: 100%; height: 100vh; height: 100svh;
@@ -390,10 +401,12 @@
     position: absolute; top: 85px; left: -5%; width: 110%; overflow: hidden;
     background: #FAFAFA; border-top: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); padding: 16px 0; transform: rotate(-2deg); z-index: 10;
   }
-  .footer-marquee-track { display: flex; width: max-content; animation: footerMarquee 30s linear infinite; }
+  .footer-marquee-track { display: flex; width: max-content; animation: footerMarquee 25s linear infinite; }
   .footer-marquee-group { display: flex; align-items: center; gap: 48px; padding-right: 48px; font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #050505; }
+  .footer-marquee-container:hover .footer-marquee-track { animation-play-state: paused; }
   .m-star { color: var(--f-gold); font-size: 18px; }
   @keyframes footerMarquee { to { transform: translateX(-50%); } }
+
   .footer-center-content { position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 24px; margin-top: 130px; }
   .footer-heading { font-size: clamp(36px, 6vw, 75px); font-weight: 800; letter-spacing: -1px; text-align: center; margin: 0 0 40px 0; color: var(--f-text); }
   .footer-links-wrapper { display: flex; flex-direction: column; align-items: center; gap: 24px; width: 100%; }
@@ -600,8 +613,8 @@
         <button class="filter-btn interactive" data-filter="commercial">Commercials</button>
       </div>
     </div>
-    <div class="infinite-slider-container" style="overflow: hidden; width: 100%;">
-      <div class="marquee-track-work" id="workSliderTrack" style="display: flex; gap: 24px; width: max-content;">
+    <div class="infinite-slider-container">
+      <div class="marquee-track-work" id="workSliderTrack">
         <div class="work-card" data-category="realestate">
           <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Real Estate" loading="lazy" decoding="async">
           <div class="work-card-overlay">
@@ -621,6 +634,20 @@
           <div class="work-card-overlay">
             <span class="work-card-category">Commercial</span>
             <h3 class="work-card-title">Cinematic Brand Campaign</h3>
+          </div>
+        </div>
+        <div class="work-card" data-category="realestate">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Real Estate" loading="lazy" decoding="async">
+          <div class="work-card-overlay">
+            <span class="work-card-category">Real Estate</span>
+            <h3 class="work-card-title">Downtown Penthouse Tour</h3>
+          </div>
+        </div>
+        <div class="work-card" data-category="sports">
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80" alt="Sports" loading="lazy" decoding="async">
+          <div class="work-card-overlay">
+            <span class="work-card-category">Sports</span>
+            <h3 class="work-card-title">Championship Finals Promo</h3>
           </div>
         </div>
       </div>
@@ -686,6 +713,15 @@
             <span>Video Editing</span> <span class="m-star">✦</span>
             <span>Color Grading</span> <span class="m-star">✦</span>
             <span>Motion Graphics</span> <span class="m-star">✦</span>
+            <span>Commercials</span> <span class="m-star">✦</span>
+            <span>Sports Reels</span> <span class="m-star">✦</span>
+          </div>
+          <div class="footer-marquee-group" aria-hidden="true">
+            <span>Video Editing</span> <span class="m-star">✦</span>
+            <span>Color Grading</span> <span class="m-star">✦</span>
+            <span>Motion Graphics</span> <span class="m-star">✦</span>
+            <span>Commercials</span> <span class="m-star">✦</span>
+            <span>Sports Reels</span> <span class="m-star">✦</span>
           </div>
         </div>
       </div>
@@ -816,36 +852,62 @@
     });
   }
 
-  // Work filter & slider
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filterValue = btn.getAttribute('data-filter');
-      document.querySelectorAll('.work-card').forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) card.classList.remove('filtered-out');
-        else card.classList.add('filtered-out');
-      });
-    });
-  });
-
+  // Work filter & Smooth Infinite Slider with Pause on Filter
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const workCards = document.querySelectorAll('.work-card');
   const track = document.getElementById('workSliderTrack');
+  
+  let isFiltered = false;
+  let xPos = 0;
+  let speed = 0.8;
+  let isHovered = false;
+
   if (track) {
-    track.innerHTML += track.innerHTML;
-    let xPos = 0, speed = 0.8, isHovered = false;
+    track.innerHTML += track.innerHTML; // تكرار للوب السلس
+
     track.addEventListener('mouseenter', () => { isHovered = true; });
     track.addEventListener('mouseleave', () => { isHovered = false; });
+
     function step() {
-      if (!isHovered) {
+      if (!isFiltered && !isHovered) {
         xPos -= speed;
-        if (Math.abs(xPos) >= track.scrollWidth / 2) xPos = 0;
+        if (Math.abs(xPos) >= track.scrollWidth / 2) {
+          xPos = 0;
+        }
         track.style.transform = `translate3d(${xPos}px, 0, 0)`;
       }
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      if (filterValue === 'all') {
+        isFiltered = false;
+        if(track) track.classList.remove('filtered-mode');
+        workCards.forEach(card => card.classList.remove('filtered-out'));
+      } else {
+        isFiltered = true; // إيقاف الحركة تماماً عند اختيار فلتر معين
+        if(track) track.classList.add('filtered-mode');
+        if(track) track.style.transform = 'none';
+        
+        workCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (category === filterValue) {
+            card.classList.remove('filtered-out');
+          } else {
+            card.classList.add('filtered-out');
+          }
+        });
+      }
+    });
+  });
 
   // Custom Cursor
   (function () {
